@@ -1,12 +1,9 @@
 #include "Treap.hpp"
 #include <cstdlib>
-
 // Constructor for TreapNode
 TreapNode::TreapNode(Movie m) : movie(m), priority(rand()), left(nullptr), right(nullptr) {}
-
 // Treap constructor
 Treap::Treap() : root(nullptr) {}
-
 // Right rotation
 TreapNode* Treap::rightRotate(TreapNode *y) {
     TreapNode *x = y->left;
@@ -14,7 +11,6 @@ TreapNode* Treap::rightRotate(TreapNode *y) {
     x->right = y;
     return x;
 }
-
 // Left rotation
 TreapNode* Treap::leftRotate(TreapNode *x) {
     TreapNode *y = x->right;
@@ -22,7 +18,6 @@ TreapNode* Treap::leftRotate(TreapNode *x) {
     y->left = x;
     return y;
 }
-
 // Insert function
 TreapNode* Treap::insert(TreapNode *node, Movie m) {
     if (!node)
@@ -38,12 +33,10 @@ TreapNode* Treap::insert(TreapNode *node, Movie m) {
     }
     return node;
 }
-
 // Public insert method
 void Treap::insert(Movie m) {
     root = insert(root, m);
 }
-
 // In-order traversal to get top movies
 void Treap::inorder(TreapNode *node, std::vector<Movie> &result, int &count, int limit) {
     if (!node || count >= limit)
@@ -55,7 +48,6 @@ void Treap::inorder(TreapNode *node, std::vector<Movie> &result, int &count, int
     }
     inorder(node->left, result, count, limit);
 }
-
 // Get top movies
 std::vector<Movie> Treap::getTopMovies(int limit) {
     std::vector<Movie> result;

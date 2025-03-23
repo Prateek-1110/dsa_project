@@ -1,9 +1,7 @@
 #ifndef TREAP_HPP
 #define TREAP_HPP
-
 #include "loadMovies.hpp"
 #include <vector>
-
 struct TreapNode
 {
     Movie movie;
@@ -11,7 +9,6 @@ struct TreapNode
     TreapNode *left, *right;
     TreapNode(Movie m);
 };
-
 class Treap
 {
 private:
