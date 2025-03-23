@@ -1,1 +1,3 @@
 cleaned_movies.csv
+main.exe
+*.exe   # This will ignore all .exe files if you don't want any executables in Git
