@@ -95,8 +95,8 @@ int main() {
             int numMovies;
             cout << "How many top-rated movies would you like to see? ";
             cin >> numMovies;
-            if (numMovies <= 0) {
-                cout << "Enter a valid number of movies!\n";
+            if(cin.fail()|| numMovies<=0) {
+                cout<<"Enter valid movies to watch !!"<<endl;
                 continue;
             }
 
@@ -138,7 +138,7 @@ int main() {
             double minRating;
             cout << "Enter Minimum Rating (0 to 10): ";
             cin >> minRating;
-            if (minRating < 0 || minRating > 10) {
+            if (cin.fail() || minRating < 0 || minRating > 10) {
                 cout << "Enter a valid rating (between 0 to 10).\n";
                 continue;
             }
@@ -152,6 +152,10 @@ int main() {
             int numMovies;
             cout << "How many movies would you like to see? ";
             cin >> numMovies;
+            if(cin.fail()|| numMovies<=0) {
+                cout<<"Enter valid movies to watch !!"<<endl;
+                return 0;
+            }
             if (numMovies > filtered.size()) {
                 cout << "Only " << filtered.size() << " movies available.\n";
                 numMovies = filtered.size();
@@ -175,7 +179,7 @@ int main() {
 
             cout << "Enter Minimum Rating (0 to 10): ";
             cin >> minRating;
-            if (minRating < 0 || minRating > 10) {
+            if (cin.fail() || minRating < 0 || minRating > 10) {
                 cout << "Enter a valid rating (between 0 to 10).\n";
                 continue;
             }
@@ -189,6 +193,10 @@ int main() {
             int numMovies;
             cout << "How many movies would you like to see? ";
             cin >> numMovies;
+            if(cin.fail()|| numMovies<=0) {
+                cout<<"Enter valid movies to watch !!"<<endl;
+                return 0;
+            }
             if (numMovies > filtered.size()) {
                 cout << "Only " << filtered.size() << " movies available.\n";
                 numMovies = filtered.size();
@@ -212,19 +220,19 @@ int main() {
             }
             cout << "Enter Minimum Rating: ";
             cin >> minRating;
-             if(minRating<0 || minRating>10){
+             if(cin.fail() || minRating<0 || minRating>10){
                 cout<<"Enter valid rating (between 0 to 10)"<<endl;
                 return 0;
             }
             cout << "Enter Minimum Runtime (in minutes): ";
             cin >> minRuntime;
-             if(minRuntime<0 || minRuntime>210){
+             if(cin.fail() || minRuntime<0 || minRuntime>210){
                 cout<<"Enter valid runtime (between 0 to 210)"<<endl;
                 return 0;
             }
             cout << "Enter Maximum Runtime (in minutes): ";
             cin >> maxRuntime;
-            if(maxRuntime<0 || maxRuntime>210){
+            if(cin.fail() || maxRuntime<0 || maxRuntime>210){
                 cout<<"Enter valid runtime (between 0 to 210)"<<endl;
                 return 0;
             }
@@ -239,7 +247,7 @@ int main() {
             int numMovies;
             cout << "How many movies would you like to see? ";
             cin >> numMovies;
-            if(numMovies<=0) {
+            if(cin.fail()|| numMovies<=0) {
                 cout<<"Enter valid movies to watch !!"<<endl;
                 return 0;
             }
